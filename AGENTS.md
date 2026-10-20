@@ -2,7 +2,7 @@
 
 Whenever you make, apply, or help the user make a change to Linux, Omarchy, or desktop settings on this machine, keep a user-readable record in this folder:
 
-- Keep reusable guides in `linux-omarchy/`, `git/`, or `nvim-lazyvim/`, according to topic. Each section has a `README.md` index.
+- Keep reusable guides in the section that best matches the topic. Existing sections include `linux-omarchy/`, `git/`, and `nvim-lazyvim/`; create a new topic folder with a `README.md` index when a guide does not fit an existing section.
 - Use stable, topic-based Markdown filenames. Update an existing guide when the topic already exists; create one only for a new topic. Do not put dates or session details in filenames.
 
 Whenever the user asks for Git help or makes/changes Git configuration, record useful, reusable guidance in the relevant `git/` guide—even if you only give advice. Do not log routine Git commands used incidentally during unrelated coding work.
@@ -19,7 +19,7 @@ Write these as quick, reusable user guides—not session transcripts. Keep them 
 4. Keep each guide focused on the setting, not the history of how the user or agent arrived at it.
 5. Write guides so they make sense on another machine: use task-oriented headings (for example, “Assigning Workspaces to Monitors”), explain the general approach, and clearly identify machine-specific names, values, or paths as examples to replace with the reader's own. Do not make a one-off setting the guide's whole framing.
 
-The guide collection is a Git repository intended to be synchronized to other machines. Do not place credentials, private URLs, or machine-specific secrets in it. Use `git/README.md`, `linux-omarchy/README.md`, and `nvim-lazyvim/README.md` as the section indexes.
+The guide collection is a Git repository intended to be synchronized to other machines. Do not place credentials, private URLs, or machine-specific secrets in it. Maintain each topic folder's `README.md` as its section index, including any new folders created for additional topics.
 
 Never put passwords, tokens, private keys, or other secrets in records. Redact sensitive values and say that they were redacted; do not reproduce unrelated configuration. If a change cannot safely be recorded verbatim, explain why and provide a safe redacted representation.
 
