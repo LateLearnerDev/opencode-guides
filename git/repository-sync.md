@@ -45,3 +45,21 @@ ln -s "$HOME/Documents/opencode-guides/AGENTS.md" "$HOME/.config/opencode/AGENTS
 `git clone` downloads the repository. `mkdir -p` creates the OpenCode config directory if needed. `ln -s` makes OpenCode's global instruction path point to the tracked file. If the target `~/.config/opencode/AGENTS.md` already exists, inspect it before linking rather than overwriting it. On later visits, run `git pull` inside the clone to receive updates.
 
 Never commit access tokens, private keys, or credential-bearing URLs. Authentication should use the hosting provider's supported credential manager or SSH setup.
+
+## Fix GitHub HTTPS authentication failures
+
+GitHub no longer accepts account passwords for Git operations over HTTPS. An error such as `Invalid username or token` can also occur when the remote uses HTTPS but your GitHub CLI (`gh`) is configured for SSH. Check the remote and the CLI's selected protocol:
+
+```sh
+git remote -v
+gh config get git_protocol
+```
+
+If `gh` reports `ssh`, change the remote to the matching SSH form, replacing the owner and repository with yours:
+
+```sh
+git remote set-url origin git@github.com:OWNER/REPOSITORY.git
+git ls-remote origin HEAD
+```
+
+`git ls-remote` verifies that authentication and repository access work without changing local files. If you prefer HTTPS, authenticate `gh` for HTTPS with `gh auth login --hostname github.com --git-protocol https`, then run `gh auth setup-git` to configure Git to use the GitHub CLI credential helper. Keep tokens out of remote URLs and config files.
