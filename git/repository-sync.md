@@ -32,4 +32,16 @@ git push -u origin main
 
 Replace `<repository-url>` with the repository's HTTPS or SSH URL. `origin` is the conventional name for the remote. `-u` sets the upstream so later pushes and pulls can use the current branch by default. On another machine, clone the remote with `git clone <repository-url>`; afterwards use `git pull` to receive updates and `git push` to publish committed changes.
 
+## Set up on another machine
+
+After the remote exists and the first push has completed, clone it on the other machine:
+
+```sh
+git clone <repository-url> "$HOME/Documents/opencode-guides"
+mkdir -p "$HOME/.config/opencode"
+ln -s "$HOME/Documents/opencode-guides/AGENTS.md" "$HOME/.config/opencode/AGENTS.md"
+```
+
+`git clone` downloads the repository. `mkdir -p` creates the OpenCode config directory if needed. `ln -s` makes OpenCode's global instruction path point to the tracked file. If the target `~/.config/opencode/AGENTS.md` already exists, inspect it before linking rather than overwriting it. On later visits, run `git pull` inside the clone to receive updates.
+
 Never commit access tokens, private keys, or credential-bearing URLs. Authentication should use the hosting provider's supported credential manager or SSH setup.
