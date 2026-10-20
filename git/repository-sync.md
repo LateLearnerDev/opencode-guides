@@ -14,7 +14,15 @@ git commit -m "Initial guides"
 
 ## Connect a remote and sync
 
-Create an empty repository on your Git hosting service, then add its clone URL:
+You can create the remote repository in GitHub's website, or use the GitHub CLI (`gh`). From the local repository folder, for example:
+
+```sh
+gh repo create opencode-guides --private --source=. --remote=origin --push
+```
+
+This creates a private GitHub repository named `opencode-guides`, uses the current directory as the local source, adds it as remote `origin`, and pushes the current branch. Use `--public` instead of `--private` only if you want the guide files visible to everyone. The `gh` CLI must be installed and authenticated first.
+
+Alternatively, create an empty repository on the hosting website, then add its clone URL:
 
 ```sh
 git remote add origin <repository-url>
