@@ -7,3 +7,4 @@ Quick reference guides for Linux, Omarchy, and desktop settings. Include both ch
 - [Positioning monitors and assigning workspaces](monitors.md)
 - [Bash aliases](bash-aliases.md)
 - [Configuring Omarchy idle screensaver and lock timers](omarchy-idle.md)
+- [Fixing Docker socket permission errors](docker-socket-permissions.md)
