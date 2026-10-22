@@ -5,3 +5,4 @@ Reusable Git workflows and configuration help.
 ## Guides
 
 - [Create and synchronize a guide repository](repository-sync.md)
+- [Ignoring files and folders with Git](gitignore.md)
