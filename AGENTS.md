@@ -1,5 +1,9 @@
 # Linux and Omarchy change records
 
+## Reusable command guides
+
+Whenever the user asks about or learns a reusable terminal command or command-line workflow, record it under `commands/`, even when it is not a Linux configuration change. Organize guides by command context (for example, `commands/files/` for file and filesystem operations); create a context folder with a `README.md` index when needed. Use stable, topic-based filenames, update existing guides when possible, and do not record routine commands used incidentally during unrelated work.
+
 Whenever you make, apply, or help the user make a change to Linux, Omarchy, or desktop settings on this machine, keep a user-readable record in this folder:
 
 - Keep reusable guides in the section that best matches the topic. Existing sections include `linux-omarchy/`, `git/`, and `nvim-lazyvim/`; create a new topic folder with a `README.md` index when a guide does not fit an existing section.
